@@ -1,29 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindMate - AI Life Counselor</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindMate - Your AI Life Counselor</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 700px;
+      padding: 40px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #007acc;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 15px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #005f8e;
+    }
+
+    #responseSection {
+      background-color: #f4faff;
+      padding: 15px;
+      border-radius: 10px;
+      min-height: 60px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      textarea {
+        height: 120px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🧠 MindMate - Your AI Life Counselor</h1>
-            <p>Share your thoughts, and let me help you understand them.</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>🧠 MindMate</h1>
+      <p>Your AI Life Counselor - Speak your mind, we listen.</p>
+    </header>
 
-        <section>
-            <textarea id="userInput" placeholder="What's on your mind?"></textarea>
-            <button onclick="getResponse()">Get Support</button>
-        </section>
+    <textarea id="userInput" placeholder="What's bothering you today?"></textarea>
+    <button onclick="getResponse()">Get Support</button>
 
-        <section id="responseSection">
-            <h3>Response:</h3>
-            <p id="response">Your answer will appear here.</p>
-        </section>
-    </div>
+    <section id="responseSection">
+      <strong>Response:</strong>
+      <p id="response">Tell me what you're feeling... I'll help you reflect.</p>
+    </section>
+  </div>
 
-    <script src="script.js"></script>
+  <script>
+    function getResponse() {
+      const userInput = document.getElementById("userInput").value.trim();
+      const responseEl = document.getElementById("response");
+
+      if (userInput === "") {
+        responseEl.innerText = "Please write something so I can assist you.";
+        return;
+      }
+
+      // Placeholder for future AI logic
+      responseEl.innerText =
+        "Thanks for opening up. You're stronger than you think, and you're not alone. 💙";
+    }
+  </script>
 </body>
 </html>
